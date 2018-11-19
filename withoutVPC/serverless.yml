@@ -1,0 +1,54 @@
+service: globalAppwithoutVPC
+provider:
+  name: aws
+  runtime: python2.7
+  memorySize: 512
+  environment:
+    STATUS: ${file(env.yml):STATUS}
+    tablename: ${file(env.yml):tablename}
+  iamRoleStatements:
+      -  Effect: "Allow"
+         Action:
+           - "dynamodb:*"
+         Resource:
+           - "arn:aws:dynamodb:${opt:region}:${file(env.yml):account}:table/${file(env.yml):tablename}"
+      -  Effect: "Allow"
+         Action:
+           - "logs:CreateLogGroup"
+           - "logs:CreateLogStream"
+           - "logs:PutLogEvents"
+           - "xray:PutTraceSegments"
+           - "xray:PutTelemetryRecords"
+         Resource:
+           - "*"
+
+package:
+  include:
+    - vendored/**
+  exclude:
+    - .git/**
+
+functions:
+  get_item:
+    handler: get.get_item
+    events:
+      - http:
+          path: get/{item_id}
+          method: GET
+          cors: true
+
+  create_item:
+    handler: post.create_item
+    events:
+      - http:
+          path: create
+          method: POST
+          cors: true
+
+  get_health:
+    handler: health.lambda_handler
+    events:
+      - http:
+          path: health
+          method: GET
+          cors: true

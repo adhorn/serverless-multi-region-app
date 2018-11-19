@@ -1,0 +1,10 @@
+*.pyc
+*.zip
+withoutVPC/vendored
+withoutVPC/.serverless
+withoutVPC/env.yml
+
+withVPC/vendored
+withVPC/.serverless
+withVPC/env_*.yml
+withVPC/env.yml
