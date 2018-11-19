@@ -1,0 +1,3 @@
+STATUS: 200
+lambdaExecSecurityGroups: ["sg-000000"]
+subnets: ["subnet-0000000"]
