@@ -1,5 +1,6 @@
 *.pyc
 *.zip
+.DS_Store
 withoutVPC/vendored
 withoutVPC/.serverless
 withoutVPC/env.yml
