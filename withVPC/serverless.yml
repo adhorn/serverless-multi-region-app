@@ -6,7 +6,7 @@ provider:
         ${file(env_${opt:region}.yml):lambdaExecSecurityGroups}
       subnetIds:
         ${file(env_${opt:region}.yml):subnets}
-  runtime: python2.7
+  runtime: python3.7
   memorySize: 512
   environment:
     STATUS: ${file(env_${opt:region}.yml):STATUS}

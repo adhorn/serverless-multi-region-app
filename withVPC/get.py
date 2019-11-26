@@ -8,6 +8,7 @@ log = logging.getLogger()
 log.setLevel(logging.DEBUG)
 
 sys.path.insert(0, './vendored')
+
 import simplejson as json
 # simplejson can handle Decimal object while the \
 # standard json package can't.

@@ -1,11 +1,16 @@
 *.pyc
 *.zip
 .DS_Store
+.vscode
 withoutVPC/vendored
 withoutVPC/.serverless
 withoutVPC/env.yml
+withoutVPC/package-lock.json
+withoutVPC/node_modules
 
 withVPC/vendored
 withVPC/.serverless
 withVPC/env_*.yml
 withVPC/env.yml
+withVPC/node_modules
+withVPC/package-lock.json

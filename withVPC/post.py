@@ -2,7 +2,7 @@ import json
 import logging
 import boto3
 import os
-import uuid
+
 
 log = logging.getLogger()
 log.setLevel(logging.DEBUG)

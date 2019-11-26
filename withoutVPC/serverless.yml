@@ -1,7 +1,18 @@
 service: globalAppwithoutVPC
+
+plugins:
+  - serverless-domain-manager
+
+custom:
+  customDomain:
+    domainName: global.adhorn.me
+    endpointType: 'regional'
+    certificateRegion: ${opt:region}
+    createRoute53Record: false
+
 provider:
   name: aws
-  runtime: python2.7
+  runtime: python3.7
   memorySize: 512
   environment:
     STATUS: ${file(env.yml):STATUS}
