@@ -1,4 +1,15 @@
 service: globalAppwithVPC
+
+plugins:
+  - serverless-domain-manager
+
+custom:
+  customDomain:
+    domainName: globalvpc.adhorn.me
+    endpointType: 'regional'
+    certificateRegion: ${opt:region}
+    createRoute53Record: false
+
 provider:
   name: aws
   vpc:
