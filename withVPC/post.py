@@ -3,7 +3,6 @@ import logging
 import boto3
 import os
 
-
 log = logging.getLogger()
 log.setLevel(logging.DEBUG)
 
@@ -18,12 +17,10 @@ def put_to_dynamo(event):
     log.debug("Received in put_to_dynamo: {}".format(json.dumps(event)))
     data = json.loads(event["body"])
     item_id = data.get("item_id", )
-    session_comment = data.get("session_comment", )
 
     table.put_item(
         Item={
-            'item_id': item_id,
-            'session_comment': session_comment
+            'item_id': item_id
         }
     )
     return item_id

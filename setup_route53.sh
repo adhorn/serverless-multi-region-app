@@ -2,7 +2,7 @@ DOMAIN=adhorn.me
 SUBDOMAIN=globalvpc.${DOMAIN}
 REGION1='us-west-2'
 REGION2='us-east-1'
-STACKNAME=globalAppwithoutVPC-dev
+STACKNAME=globalAppwithVPC-dev
 PROFILE=adrian-private
 
 USWEST2DOMAIN=$(aws cloudformation describe-stacks --stack-name ${STACKNAME} --region ${REGION1} --output text --query 'Stacks[0].Outputs[?OutputKey==`ServiceEndpoint`].OutputValue')

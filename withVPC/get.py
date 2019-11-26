@@ -36,6 +36,7 @@ def get_item(event, context):
     log.debug("Received event in get_item: {}".format(json.dumps(event)))
     body = {
         "item_id": get_from_dynamo(event),
+        "retrieved from": region
     }
     response = {
         "statusCode": 200,
