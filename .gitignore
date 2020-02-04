@@ -14,3 +14,10 @@ withVPC/env_*.yml
 withVPC/env.yml
 withVPC/node_modules
 withVPC/package-lock.json
+
+withALB/vendor
+withALB/.serverless
+withALB/env_*.yml
+withALB/env.yml
+withALB/node_modules
+withALB/package-lock.json
